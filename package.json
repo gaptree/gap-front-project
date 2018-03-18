@@ -1,0 +1,33 @@
+{
+  "name": "gap-front-project",
+  "version": "1.0.0",
+  "description": "Gap front Project",
+  "scripts": {
+    "clear": "./bin/clear",
+    "setting": "./bin/setting",
+    "release": "npm run clear && npm run setting && ./bin/front-release",
+    "eslint": "eslint front/js/",
+    "sass-lint": "sass-lint -v --max-warnings=0",
+    "lint": "npm run eslint && npm run sass-lint",
+    "jest": "jest",
+    "test": "npm run lint && npm run jest"
+  },
+  "dependencies": {
+    "gap-front-base": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.6",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
+    "gap-node-scss": "^2.0.5",
+    "gap-node-webpack": "^1.0.2",
+    "jest": "^22.1.2",
+    "regenerator-runtime": "^0.11.1",
+    "sass-lint": "^1.12.1"
+  },
+  "author": "zhanjh <zhanjh@126.com>",
+  "repository": "https://github.com/gaptree/gap-front-project",
+  "license": "MIT",
+  "main": "front/index.js"
+}
