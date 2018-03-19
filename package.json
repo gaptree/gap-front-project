@@ -10,7 +10,8 @@
     "sass-lint": "sass-lint -v --max-warnings=0",
     "lint": "npm run eslint && npm run sass-lint",
     "jest": "jest",
-    "test": "npm run lint && npm run jest"
+    "test": "npm run lint && npm run jest",
+    "front-server": "node ./script/front-server.js"
   },
   "dependencies": {
     "gap-front-base": "^1.0.1"
@@ -20,6 +21,7 @@
     "babel-jest": "^22.0.6",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
+    "gap-node-mock": "^1.0.0",
     "gap-node-scss": "^2.0.5",
     "gap-node-webpack": "^1.0.2",
     "jest": "^22.1.2",

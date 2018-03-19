@@ -7,34 +7,46 @@ const express = require('express');
 const path = require('path');
 const scss = require('gap-node-scss');
 const webpack = require('gap-node-webpack');
+const fs = require('fs');
 
 const baseDir = path.resolve(__dirname, '..');
+const setting = JSON.parse(
+    fs.readFileSync(
+        path.resolve(baseDir, 'setting/front-server.json'),
+        'utf8'
+    )
+);
+
 const app = express();
 const port = '8007';
 
-app.use('/css', scss.middleware({
-    inputDir: path.resolve(baseDir, 'front/scss'),
-    outputDir: path.resolve(baseDir, 'site/static/dev/css'),
-    includePaths: [
-        path.resolve(baseDir, 'node_modules/foundation-sites/scss'),
-        path.resolve(baseDir, 'node_modules/gap-front-scss/scss')
-    ],
-    sourceMap: true,
-    outputStyle: 'expanded' // nested, expanded, compact, compressed
-}));
+if (setting.scss) {
+    app.use(setting.scss.publicSlug, scss.middleware({
+        inputDir: path.resolve(baseDir, setting.scss.inputDir),
+        outputDir: path.resolve(baseDir, setting.scss.outputDir.dev),
+        includePaths: setting.scss.includePaths.map(item => path.resolve(baseDir, item)),
+        sourceMap: true,
+        outputStyle: 'expanded' // nested, expanded, compact, compressed
+    }));
+}
 
-app.use(webpack.middleware({
-    contextDir: path.resolve(baseDir, 'front/js'),
-    outputDir: path.resolve(baseDir, 'site/static/dev/js'),
-    modules: [
-        path.resolve(baseDir, 'node_modules')
-    ],
-    sourceMap: true,
-    publicSlug: 'js',
-    entry: {
-        main: './main.js'
-    }
-}));
+if (setting.webpack) {
+    app.use(webpack.middleware({
+        contextDir: path.resolve(baseDir, setting.webpack.contextDir),
+        outputDir: path.resolve(baseDir, setting.webpack.outputDir.dev),
+        modules: setting.webpack.modules.map(item => path.resolve(baseDir, item)),
+        sourceMap: true,
+        publicSlug: setting.webpack.publicSlug,
+        entry: setting.webpack.entry
+    }));
+}
+
+if (setting.public) {
+    app.use(
+        setting.public.publicSlug,
+        express.static(path.resolve(baseDir, setting.public.publicDir))
+    );
+}
 
 app.listen(port, function () {
     console.log('Front server listening on port ' + port + '!');
