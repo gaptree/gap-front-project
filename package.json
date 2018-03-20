@@ -14,7 +14,8 @@
     "front-server": "node ./script/front-server.js"
   },
   "dependencies": {
-    "gap-front-base": "^1.0.1"
+    "gap-front-base": "^2.0.0",
+    "gap-front-scss": "^1.0.12"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

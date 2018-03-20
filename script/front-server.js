@@ -7,6 +7,7 @@ const express = require('express');
 const path = require('path');
 const scss = require('gap-node-scss');
 const webpack = require('gap-node-webpack');
+const mock = require('gap-node-mock');
 const fs = require('fs');
 
 const baseDir = path.resolve(__dirname, '..');
@@ -21,7 +22,7 @@ const app = express();
 const port = '8007';
 
 if (setting.scss) {
-    app.use(setting.scss.publicSlug, scss.middleware({
+    app.use('/' + setting.scss.publicSlug, scss.middleware({
         inputDir: path.resolve(baseDir, setting.scss.inputDir),
         outputDir: path.resolve(baseDir, setting.scss.outputDir.dev),
         includePaths: setting.scss.includePaths.map(item => path.resolve(baseDir, item)),
@@ -45,6 +46,13 @@ if (setting.public) {
     app.use(
         setting.public.publicSlug,
         express.static(path.resolve(baseDir, setting.public.publicDir))
+    );
+}
+
+if (setting.mock) {
+    app.use(
+        '/' + setting.mock.publicSlug || '',
+        mock({mockDir: setting.mock.mockDir})
     );
 }
 

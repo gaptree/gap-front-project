@@ -1,0 +1,12 @@
+$code-bg-color: #e6e6e6;
+$code-border-color: #cacaca;
+
+pre {
+    background-color: $code-bg-color;
+    border: 1px solid $code-border-color;
+
+    code {
+        background-color: $code-bg-color;
+        border: 0;
+    }
+}

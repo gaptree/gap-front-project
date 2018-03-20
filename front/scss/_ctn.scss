@@ -1,0 +1,8 @@
+$ctn-width: 1000px;
+$ctn-margin: 0 auto;
+
+.ctn {
+    margin: $ctn-margin;
+    max-width: $ctn-width;
+    padding: 0 1rem;
+}

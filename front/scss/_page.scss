@@ -1,0 +1,32 @@
+$page-header-height: 64px;
+$page-header-shadow: 0 1px 8px rgba(0, 0, 0, .3);
+
+.page {
+    background: $bg-color;
+}
+
+.page-header {
+    height: $page-header-height;
+}
+
+.page-header-fixed {
+    background: $white;
+    border-bottom: 1px solid $primary-color;
+    box-shadow: $page-header-shadow;
+    height: $page-header-height;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.page-body {
+    padding: 1rem 0;
+}
+
+.page-footer {
+}
+
+.page-footer-fixed {
+}
