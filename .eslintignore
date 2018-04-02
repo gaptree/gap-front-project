@@ -1,2 +1,3 @@
 .eslintignore
 jest.config.js
+front/js/main.js

@@ -1,7 +1,5 @@
-import {Dto} from 'gap-front-base';
+import {Loader} from 'gap-front-web';
 
-const book = new Dto({
-    title: 'History'
+(new Loader()).onLoad(elem => {
+    import(`./${elem.getAttribute('gap-load')}.js`);
 });
-
-console.log(book);

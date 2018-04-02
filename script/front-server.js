@@ -33,6 +33,7 @@ if (setting.scss) {
 
 if (setting.webpack) {
     app.use(webpack.middleware({
+        staticHost: setting.webpack.staticHost,
         contextDir: path.resolve(baseDir, setting.webpack.contextDir),
         outputDir: path.resolve(baseDir, setting.webpack.outputDir.dev),
         modules: setting.webpack.modules.map(item => path.resolve(baseDir, item)),

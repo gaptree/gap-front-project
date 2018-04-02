@@ -8,10 +8,12 @@
         },
         "includePaths": [
             "node_modules/foundation-sites/scss",
-            "node_modules/gap-front-scss/scss"
+            "node_modules/gap-front-scss/scss",
+            "node_modules/gap-front-zselect/scss"
         ]
     },
     "webpack": {
+        "staticHost": "a:8007",
         "publicSlug": "js",
         "contextDir": "front/js",
         "outputDir": {
