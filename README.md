@@ -85,12 +85,122 @@ oneElem('.some-elem').addClass('c1 c2 c3');
 oneElem('.some-elem').removeClass('c1 c2 c3');
 ```
 
+#### Functions add to HTMLElement.prototype
+
+- HTMLElement.prototype
+    - html(strs, ...items)
+
+```javascript
+import {oneElem, createElem} from 'gap-front-web';
+
+const newElem = createElem('div');
+newElem.html`
+    <ul>
+        <li>1</li><li>2</li>
+    </ul>
+`;
+
+const someElem = oneElem('#some-elem');
+
+someElem.html`
+    <div>
+        ${newElem}
+    </div>
+    <ul class="map">
+        ${[1, 3, 5, 7].map(item => `<li>${item}</li>`)}
+    </ul>
+`;
+
+console.log(someElem.innerHTML);
+/*
+<div>
+    <ul>
+        <li>1</li><li>2</li>
+    </ul>
+</div>
+<ul class="map">
+    <li>1</li><li>3</li><li>5</li><li>7</li>
+</ul>
+*/
+```
+
 #### Functions add to Event.prototype
 
 - Event.prototype
     - stop()
     - cancel()
 
+
+### gap-front-view
+
+<https://github.com/gaptree/gap-front-view>
+
+```
+$ yarn add gap-front-view
+```
+
+```html
+<div id="container"></div>
+```
+
+```javascript
+// AuthorView
+import {View} from 'gap-front-view';
+
+export class AuthorView extends View
+{
+    static get tag() { return 'strong'; }
+
+    onUpdate() {
+        this.render();
+    }
+
+    render() {
+        this.ctn.html`
+            ${this.data.name}
+        `;
+    }
+}
+
+// BookView
+import {Div} from 'gap-front-view';
+import {AuthorView} from './AuthorView.js';
+
+export class BookView extends Div
+{
+    render() {
+        this.ctn.html`
+            <span class="user">
+            ${this.view('author', AuthorView, {name: 'Gap Tree'})}
+            </span>
+        `;
+    }
+
+    onUpdate() {
+        this.get('author').update({name: 'haha'});
+    }
+}
+
+
+// usage
+import {BookView} from './BookView.js';
+import {oneElem} from 'gap-front-web';
+
+const book = new BookView();
+book.appendTo(oneElem('#container');
+```
+
+Expected Html
+
+```html
+<div id="container">
+    <div>
+        <span class="user">
+            <strong>Gap Tree</strong>
+        </span>
+    </div>
+</div>
+```
 
 
 ## Build Front Server
