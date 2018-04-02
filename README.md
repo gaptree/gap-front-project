@@ -2,7 +2,106 @@
 
 This is an example to show that how to build front server and create web application.
 
+## Create Web Application
+
+### gap-front-web
+
+<https://github.com/gaptree/gap-front-web>
+
+```
+yarn add gap-front-web
+```
+
+#### selector
+
+```html
+<div class="elem1">elem1</div>
+
+<div class="elems">e1</div>
+<div class="elems">e2</div>
+<div class="elems">e3</div>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+</ul>
+```
+
+```javascript
+import {oneElem, allElem} from 'gap-front-web';
+
+const elem1 = oneElem('.elem1');
+const elems = allElem('.elems');
+
+console.log(elem1.innerHTML); // elem1
+elems.forEach(elem => console.log(elem.innerHTML)); // e1, e2, ...
+
+oneElem('ul').allElem('li').map(elem => elem.innerHTML); // [1, 2]
+```
+
+#### handle event
+
+```
+const elem = oneElem('#elem-id');
+elem.on('click', (evt) => {
+    if (evt.target.getAttribute('key') === 'someValue') {
+        // coding here
+    }
+
+    elem.hide();
+});
+```
+
+#### Functions add to Element.prototype
+
+- Element.prototype
+    - remove()
+    - replace(elem)
+    - show()
+    - hide()
+    - on(eventTypes, handler, useCapture)
+    - setVal(val)
+    - getVal()
+    - hasClass(className)
+    - removeClass(className)
+    - addClass(className)
+    - toggleClass(className)
+    - require <https://daneden.github.io/animate.css/>
+        - fadeOut()
+        - animateCss(animationName)
+
+```javascript
+oneElem('#to-remove').remove();
+oneElem('#to-replace').replace(document.createElement('div'));
+oneElem('#to-show').show();
+oneElem('#to-hide').hide();
+
+oneElem('#some-input').setVal('hello'); // <input value="hello">
+oneElem('.some-textarea').setVal('hello world'); // <textarea>hello world</textarea>
+oneElem('.some-select').setVal('v1'); // <select><option value="v1" selected="selected">text1</option> <option></option></select>
+oneElem('.some-div').setVal('this is div'); // <div>this is div</div>
+
+oneElem('.some-elem').addClass('c1 c2 c3');
+oneElem('.some-elem').removeClass('c1 c2 c3');
+```
+
+#### Functions add to Event.prototype
+
+- Event.prototype
+    - stop()
+    - cancel()
+
+
+
 ## Build Front Server
+
+To run front-server for this project
+
+```
+$ yarn run front-server
+```
+
+Check the script `script/front-server.js` for more info;
 
 ### gap-node-scss
 
@@ -83,7 +182,7 @@ $ yarn add gap-node-mock --dev
 
 
 ```javascript
-const mock = require('gap-node-mock);
+const mock = require('gap-node-mock');
 const express = require('express');
 
 const app = express();
@@ -92,4 +191,3 @@ app.use('/', mock({mockDir: xxx});
 app.listen(port);
 ```
 
-## Create Web Application

@@ -19,7 +19,7 @@ const setting = JSON.parse(
 );
 
 const app = express();
-const port = '8007';
+const port = setting.port || 8007;
 
 if (setting.scss) {
     app.use('/' + setting.scss.publicSlug, scss.middleware({

@@ -1,4 +1,5 @@
 {
+    "port": 8007,
     "scss": {
         "publicSlug": "css",
         "inputDir": "front/scss",
