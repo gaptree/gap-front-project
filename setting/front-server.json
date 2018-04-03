@@ -1,5 +1,4 @@
 {
-    "port": 8007,
     "scss": {
         "publicSlug": "css",
         "inputDir": "front/scss",
@@ -14,7 +13,6 @@
         ]
     },
     "webpack": {
-        "staticHost": "a:8007",
         "publicSlug": "js",
         "contextDir": "front/js",
         "outputDir": {
