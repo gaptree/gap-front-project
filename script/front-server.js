@@ -17,9 +17,16 @@ const setting = JSON.parse(
         'utf8'
     )
 );
+const localSetting = JSON.parse(
+    fs.readFileSync(
+        path.resolve(baseDir, 'setting/front-server.local.json'),
+        'utf8'
+    )
+);
 
 const app = express();
-const port = setting.port || 8007;
+const port = localSetting.port || 8007;
+const staticHost = localSetting.staticHost || 'localhost';
 
 if (setting.scss) {
     app.use('/' + setting.scss.publicSlug, scss.middleware({
@@ -33,7 +40,7 @@ if (setting.scss) {
 
 if (setting.webpack) {
     app.use(webpack.middleware({
-        staticHost: setting.webpack.staticHost,
+        staticHost: staticHost,
         contextDir: path.resolve(baseDir, setting.webpack.contextDir),
         outputDir: path.resolve(baseDir, setting.webpack.outputDir.dev),
         modules: setting.webpack.modules.map(item => path.resolve(baseDir, item)),

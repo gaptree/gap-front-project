@@ -1,3 +1,4 @@
 node_modules
 **/.bk-*
 yarn-error.log
+*.local.json
