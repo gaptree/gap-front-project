@@ -1,4 +1,5 @@
 node_modules
-**/.bk-*
+*.bk
 yarn-error.log
 *.local.json
+site/static/dist

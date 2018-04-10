@@ -5,13 +5,13 @@
   "scripts": {
     "clear": "./bin/clear",
     "setting": "./bin/setting",
-    "release": "npm run clear && npm run setting && ./bin/front-release",
+    "release": "node ./script/front.js release",
     "eslint": "eslint front/js/",
     "sass-lint": "sass-lint -v --max-warnings=0",
     "lint": "npm run eslint && npm run sass-lint",
     "jest": "jest",
     "test": "npm run lint && npm run jest",
-    "front-server": "node ./script/front-server.js"
+    "front-server": "node ./script/front.js server"
   },
   "dependencies": {
     "gap-front-scss": "^1.0.12",
@@ -24,9 +24,7 @@
     "babel-jest": "^22.0.6",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
-    "gap-node-mock": "^1.0.0",
-    "gap-node-scss": "^2.0.5",
-    "gap-node-webpack": "^1.0.2",
+    "gap-node-front": "^1.0.1",
     "jest": "^22.1.2",
     "regenerator-runtime": "^0.11.1",
     "sass-lint": "^1.12.1"
