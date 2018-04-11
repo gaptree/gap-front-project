@@ -1,10 +1,10 @@
 import {UserList} from './UserList.js';
-import {Event} from 'gap-front-event';
+import {GapEvent} from 'gap-front-event';
 
 let querying = false;
 let currentKeyword;
 
-const userEvent = new Event();
+const userEvent = new GapEvent();
 
 const query = (keyword) => {
     currentKeyword = keyword;

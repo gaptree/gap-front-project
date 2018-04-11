@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "gap-front-scss": "^1.0.12",
-    "gap-front-view": "^1.0.3",
-    "gap-front-web": "^1.0.6",
-    "gap-front-zselect": "^2.0.0"
+    "gap-front-view": "^1.0.4",
+    "gap-front-web": "^1.2.0",
+    "gap-front-zselect": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

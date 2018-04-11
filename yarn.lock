@@ -2290,9 +2290,9 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-gap-front-event@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gap-front-event/-/gap-front-event-1.0.2.tgz#40e34baaec5736845ecfdac8d9a53aad5f5b0613"
+gap-front-event@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gap-front-event/-/gap-front-event-2.0.0.tgz#1afd71f5bbb0d94a4efd350424a708cd8b7b4f52"
 
 gap-front-scss@^1.0.12:
   version "1.0.12"
@@ -2300,23 +2300,23 @@ gap-front-scss@^1.0.12:
   dependencies:
     foundation-sites "^6.4.3"
 
-gap-front-view@^1.0.2, gap-front-view@^1.0.3:
+gap-front-view@^1.0.2, gap-front-view@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/gap-front-view/-/gap-front-view-1.0.4.tgz#209980ffa8f152766bbd35353b1946f36acdae06"
   dependencies:
     gap-front-web "^1.0.6"
 
-gap-front-web@^1.0.6:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/gap-front-web/-/gap-front-web-1.1.1.tgz#717b6caf7ac4eb5e35c511ec46eeea52f547ada4"
+gap-front-web@^1.0.6, gap-front-web@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gap-front-web/-/gap-front-web-1.2.0.tgz#aec5f0205faa2df227083af0beba357330c9fe83"
   dependencies:
-    gap-front-event "^1.0.2"
+    gap-front-event "^2.0.0"
 
-gap-front-zselect@^2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/gap-front-zselect/-/gap-front-zselect-2.0.6.tgz#8655a170482b23672001e9b3b5e0392fe255c086"
+gap-front-zselect@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gap-front-zselect/-/gap-front-zselect-2.1.0.tgz#eba9f1a5655edaf9db8197e95f887db6a9438030"
   dependencies:
-    gap-front-event "^1.0.2"
+    gap-front-event "^2.0.0"
     gap-front-view "^1.0.2"
     gap-front-web "^1.0.6"
 
