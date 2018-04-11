@@ -2301,14 +2301,14 @@ gap-front-scss@^1.0.12:
     foundation-sites "^6.4.3"
 
 gap-front-view@^1.0.2, gap-front-view@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/gap-front-view/-/gap-front-view-1.0.4.tgz#209980ffa8f152766bbd35353b1946f36acdae06"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gap-front-view/-/gap-front-view-1.1.1.tgz#39d46efb3f8765771be81eb2a81bedb02874699b"
   dependencies:
     gap-front-web "^1.0.6"
 
 gap-front-web@^1.0.6, gap-front-web@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gap-front-web/-/gap-front-web-1.2.0.tgz#aec5f0205faa2df227083af0beba357330c9fe83"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/gap-front-web/-/gap-front-web-1.2.1.tgz#04cff9db98746c91d671bfb7fa2cb4c5375a7588"
   dependencies:
     gap-front-event "^2.0.0"
 
@@ -3921,8 +3921,8 @@ negotiator@0.6.1:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
 neo-async@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.0.tgz#76b1c823130cca26acfbaccc8fbaf0a2fa33b18f"
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.1.tgz#acb909e327b1e87ec9ef15f41b8a269512ad41ee"
 
 next-tick@1:
   version "1.0.0"
