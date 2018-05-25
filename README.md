@@ -19,7 +19,7 @@ import {View} from 'gap-front-view';
 
 class UserView extends View {
     template() {
-        return this.tpl`
+        return this.html`
         <form action="javascript:;" on-submit=${(form, e) => this.onSubmit(form, e)}>
             <input
                 name="userId"
@@ -102,9 +102,9 @@ import {View} from 'gap-front-view';
 
 class UserListView extends View {
     template() {
-        return this.tpl`
+        return this.html`
         <div id="user-list" bind-arr="users" arr-key=${user => user.userId}>
-            ${() => this.tpl`
+            ${() => this.html`
                 <span bind-id="userId">
                     $${'name'}
                 </span>
