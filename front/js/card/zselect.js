@@ -4,6 +4,7 @@ import {userRepo} from '../../mock/userRepo.js';
 
 const select = new Zselect({
     required: 'required',
+    placeholder: '',
     name: 'userId',
     isMulti: true,
     pattern: {
@@ -14,6 +15,5 @@ const select = new Zselect({
 });
 
 select.onQuery(query => userRepo.query(query));
-userRepo.onLoad(users => select.showDropList(users));
 
 select.appendTo(oneElem('.zselect-container'));

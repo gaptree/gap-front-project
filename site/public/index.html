@@ -255,7 +255,6 @@ const select = new Zselect({
 });
 
 select.onQuery(query => userRepo.query(query));
-userRepo.onLoad(users => select.showDropList(users));
 
 select.appendTo(oneElem('.zselect-container'));</code></pre>
     </p>

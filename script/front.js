@@ -24,7 +24,9 @@ const front = require('gap-node-front')({
     port: port,
     staticHost: staticHost,
     scss: {
-        publicSlug: 'css',
+        publicSlug: {
+            dev: 'css',
+        },
         inputDir: 'front/scss',
         outputDir: {
             dev: 'site/static/dev/css',
@@ -37,7 +39,9 @@ const front = require('gap-node-front')({
         ]
     },
     webpack: {
-        publicSlug: 'js',
+        publicSlug: {
+            dev: 'js',
+        },
         contextDir: 'front/js',
         outputDir: {
             'dev': 'site/static/dev/js',
@@ -51,10 +55,15 @@ const front = require('gap-node-front')({
         }
     },
     public: {
-        publicSlug: '',
+        publicSlug: {
+            dev: '',
+        },
         publicDir: 'site/public'
     },
     mock: {
+        publicSlug: {
+            dev: ''
+        },
         mockDir: 'mock'
     }
 });

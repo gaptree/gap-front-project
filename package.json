@@ -16,7 +16,8 @@
   "dependencies": {
     "gap-front-scss": "^1.0.12",
     "gap-front-view": "^2.0.9",
-    "gap-front-web": "^1.2.11"
+    "gap-front-web": "^1.2.11",
+    "gap-front-zselect": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

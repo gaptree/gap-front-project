@@ -1,4 +1,23 @@
 import {UserList} from './UserList.js';
+
+const query = (keyword) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(
+                UserList.filter(
+                    user => user.nick.match(keyword)
+                        || user.email.match(keyword)
+                )
+            );
+        }, 200);
+    });
+};
+
+export const userRepo = {
+    query
+};
+/*
+import {UserList} from './UserList.js';
 import {GapEvent} from 'gap-front-event';
 
 let querying = false;
@@ -34,3 +53,4 @@ export const userRepo = {
     query: query,
     onLoad: onLoad
 };
+*/
